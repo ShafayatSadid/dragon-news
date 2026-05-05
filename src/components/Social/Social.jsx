@@ -1,5 +1,6 @@
 import React from 'react';
-import { FaGithub, FaGoogle } from 'react-icons/fa';
+import { FaFacebook, FaGithub, FaGoogle, FaInstagram } from 'react-icons/fa';
+import { IoLogoTwitter } from 'react-icons/io';
 
 const Social = () => {
     return (
@@ -10,6 +11,20 @@ const Social = () => {
 
           <button className="btn mt-3">
             <FaGithub /> Login with GitHub
+          </button>
+
+          <h2 className="text-[1.25rem] font-semibold text-[#403F3F] my-5.5">Find Us On</h2>
+
+          <button className='btn text-[#706F6F] pr-[137px]'>
+            <FaFacebook className='text-[#3B599C] ' /> Facebook
+          </button>
+
+          <button className='btn text-[#706F6F] pr-[158px] my-3'>
+            <IoLogoTwitter  className='text-[#58A7DE] ' /> Twitter
+          </button>
+
+          <button className='btn text-[#706F6F] pr-[132px]'>
+            <FaInstagram className='text-[#D82D7E] ' /> Instagram
           </button>
         </div>
     );

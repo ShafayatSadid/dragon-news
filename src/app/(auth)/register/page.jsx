@@ -1,5 +1,6 @@
 'use client'
 import { authClient } from '@/lib/auth-client';
+import { useRouter } from 'next/navigation';
 import { useState } from 'react';
 import { useForm } from 'react-hook-form';
 import { IoEyeOffOutline, IoEyeOutline } from 'react-icons/io5';
@@ -11,7 +12,7 @@ const RegistrationPage = () => {
 
     // password toggle system
     const [isShowPassword, setIsShowPassword] = useState(false);
-
+const router = useRouter();
     // get user data method
     const getSubmit = async (userData) => {
         const { name, last, profile, email, password } = userData
@@ -19,8 +20,7 @@ const RegistrationPage = () => {
 
         // register function
         const { data, error } = await authClient.signUp.email({
-            name: name, // required
-
+            name: `${name} ${last}`, // required
             image: profile,
             email: email, // required
             password: password, // required
@@ -34,14 +34,15 @@ const RegistrationPage = () => {
         }
         else {
             alert('Sign up successfully')
+            router.push("/")
         }
     }
 
     return (
-        <div onSubmit={handleSubmit(getSubmit)} className='max-w-[400px] mx-auto my-[134px]'>
+        <div className='max-w-[400px] mx-auto my-[134px]'>
             <h2 className='text-[2rem] font-semibold mb-10 text-center'>Register your account</h2>
             <hr />
-            <form>
+            <form onSubmit={handleSubmit(getSubmit)}>
                 {/* name */}
                 <fieldset className="fieldset mt-5">
                     <legend className="fieldset-legend text-[1.25rem] font-semibold ">Full Name</legend>
@@ -67,7 +68,7 @@ const RegistrationPage = () => {
                     <input {...register("profile", { required: "Profile photo is required" })}
                         type="text" className="input w-full" placeholder="Enter your profile url" />
 
-                    {errors.last && <p className='text-red-500'>{errors.last.message}</p>}
+                    {errors.profile && <p className='text-red-500'>{errors.profile.message}</p>}
                 </fieldset>
 
                 {/* email */}

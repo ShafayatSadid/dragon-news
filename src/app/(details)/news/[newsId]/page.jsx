@@ -38,11 +38,11 @@ const NewsDetailsPage = async ({ params }) => {
             </div>
 
             {/* Social login */}
-            <div className="w-[282px] h-[134px]">
+            {/* <div className="w-[282px] h-[134px]">
                 <h2 className="text-[1.25rem] font-semibold text-[#403F3F]">Login with</h2>
 
                 <Social />
-            </div>
+            </div> */}
         </div>
     );
 };

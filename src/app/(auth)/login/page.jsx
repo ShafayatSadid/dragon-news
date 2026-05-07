@@ -32,10 +32,10 @@ const LoginPage = () => {
         }
     }
     return (
-        <div onSubmit={handleSubmit(getSubmit)} className='max-w-[400px] mx-auto my-[134px]'>
+        <div className='max-w-[400px] mx-auto my-[134px]'>
             <h2 className='text-[2rem] font-semibold mb-10 text-center'>Login your account</h2>
             <hr />
-            <form>
+            <form onSubmit={handleSubmit(getSubmit)}>
                 {/* email */}
                 <fieldset className="fieldset mt-5">
                     <legend className="fieldset-legend text-[1.25rem] font-semibold ">Email address</legend>

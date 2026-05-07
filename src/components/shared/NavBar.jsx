@@ -1,9 +1,15 @@
+'use client'
 import Image from 'next/image';
 import Link from 'next/link';
 import userAvatar from '@/assets/user.png'
 import NavLink from './NavLink';
+import { authClient } from '@/lib/auth-client';
 
 const NavBar = () => {
+    // get session user id
+    const { data: session, isPending } = authClient.useSession()
+    const user = session?.user;
+    console.log(session, 'session:');
     return (
         <div className='mt-[34px] flex justify-between items-center max-w-[1140px] mx-auto'>
 
@@ -23,12 +29,28 @@ const NavBar = () => {
             </ul>
 
             {/* user details */}
-            <div className='flex items-center gap-1'>
-                <Image src={userAvatar} width={41} height={41} alt='user Photo' />
-                <Link href={'/login'}>
-                    <button className='btn px-[43px] bg-[#403F3F] text-white'>Login</button>
-                </Link>
-            </div>
+
+            {
+                isPending ? <div><span className="loading loading-ring loading-md"></span></div> :
+                    user ? <div className='flex items-center gap-2'>
+                        <h2>Hello, {user?.name}</h2>
+                        <Image src={user.image} width={41} height={41} alt='user Photo' />
+                        <Link href={''}>
+                            <button onClick={async () => await authClient.signOut()} className='btn px-[23px] bg-blue-500 text-white'>Log out</button>
+                        </Link>
+
+                    </div>
+                        :
+                        <div className='flex items-center gap-2'>
+
+                            <Image src={userAvatar} width={41} height={41} alt='user Photo' />
+                            <Link href={'/login'}>
+                                <button className='btn px-[23px] bg-blue-500 text-white'>Login</button>
+                            </Link>
+
+                        </div>
+            }
+
         </div>
     );
 };

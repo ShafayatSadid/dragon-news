@@ -1,36 +1,86 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# Dragon News
 
-## Getting Started
+## Description
+Dragon News is a modern news portal built with Next.js that provides users with the latest news articles organized by categories. The application features user authentication, allowing users to log in via email/password or social providers like Google and GitHub. It offers a clean, responsive interface for browsing news and reading detailed articles.
 
-First, run the development server:
+## Features
+- Browse news articles by different categories
+- View detailed news content with full article pages
+- User authentication with email/password and social login (Google, GitHub)
+- Responsive design optimized for mobile and desktop
+- Fast loading with Next.js server-side rendering
+- Clean and intuitive user interface
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+## Technologies Used
+- **Next.js** - React framework for server-side rendering and static site generation
+- **React** - JavaScript library for building user interfaces
+- **Tailwind CSS** - Utility-first CSS framework for styling
+- **DaisyUI** - Component library built on top of Tailwind CSS
+- **Better Auth** - Authentication library for secure user management
+- **MongoDB** - NoSQL database for data storage
+- **React Hook Form** - Library for form handling
+- **React Icons** - Icon library for UI elements
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+## Dependencies
+### Production Dependencies
+- `@better-auth/mongo-adapter`: ^1.6.9
+- `better-auth`: ^1.6.9
+- `date-fns`: ^4.1.0
+- `mongodb`: ^7.2.0
+- `next`: 16.2.4
+- `react`: 19.2.4
+- `react-dom`: 19.2.4
+- `react-fast-marquee`: ^1.6.5
+- `react-hook-form`: ^7.75.0
+- `react-icons`: ^5.6.0
 
-You can start editing the page by modifying `app/page.js`. The page auto-updates as you edit the file.
+### Development Dependencies
+- `@gravity-ui/icons`: ^2.18.0
+- `@tailwindcss/postcss`: ^4
+- `babel-plugin-react-compiler`: 1.0.0
+- `daisyui`: ^5.5.19
+- `eslint`: ^9
+- `eslint-config-next`: 16.2.4
+- `tailwindcss`: ^4
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+## Run Locally
+Follow these steps to run the project on your local machine:
 
-## Learn More
+1. **Clone the repository:**
+   ```bash
+   git clone <repository-url>
+   ```
 
-To learn more about Next.js, take a look at the following resources:
+2. **Navigate to the project directory:**
+   ```bash
+   cd dragon-news
+   ```
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+3. **Install dependencies:**
+   ```bash
+   npm install
+   ```
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+4. **Set up environment variables:**
+   Create a `.env.local` file in the root directory and add the following variables:
+   ```
+   MONGO_URI=your_mongodb_connection_string
+   GOOGLE_CLIENT_ID=your_google_client_id
+   GOOGLE_CLIENT_SECRET=your_google_client_secret
+   GITHUB_CLIENT_ID=your_github_client_id
+   GITHUB_CLIENT_SECRET=your_github_client_secret
+   ```
 
-## Deploy on Vercel
+5. **Start the development server:**
+   ```bash
+   npm run dev
+   ```
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+6. **Open your browser:**
+   Navigate to `http://localhost:3000` to view the application.
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+## Screenshots
+
+## Links
+- **Live Demo:**
+- **GitHub Repository:**

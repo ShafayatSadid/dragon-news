@@ -82,5 +82,5 @@ Follow these steps to run the project on your local machine:
 ## Screenshots
 ![alt text](screencapture-dragon-news-project-sigma-vercel-app-category-01-2026-05-08-14_05_33.png)
 ## Links
-- **Live Demo:**
-- **GitHub Repository:**
+- **Live Demo:https://dragon-news-project-sigma.vercel.app/**
+- **GitHub Repository:https://github.com/ShafayatSadid/dragon-news**

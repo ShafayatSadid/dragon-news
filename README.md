@@ -80,7 +80,7 @@ Follow these steps to run the project on your local machine:
    Navigate to `http://localhost:3000` to view the application.
 
 ## Screenshots
-
+![alt text](screencapture-dragon-news-project-sigma-vercel-app-category-01-2026-05-08-14_05_33.png)
 ## Links
 - **Live Demo:**
 - **GitHub Repository:**
